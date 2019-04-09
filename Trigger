@@ -1,0 +1,15 @@
+what is trigger?
+
+
+Types of Trigger?
+  1. DML Trigger (After Trigger)
+  2. DDL Trigger (For Trigger) 
+
+What they are used for?
+
+
+what is the difference b/n trigger and constraint? 
+
+
+why trigger is better than contraint and where they are important than constraint?
+
