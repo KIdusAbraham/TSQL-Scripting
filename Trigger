@@ -77,6 +77,9 @@ why trigger is better than contraint and where they are important than constrain
 
 
 
+
+
+
 -----------------CLASS NOTES------------------------------
 ----------------Trigger---------------
 --1.DML Trigger (After Trigger) - Table/View Level
