@@ -11,7 +11,52 @@ What they are used for/where they are important?
 Types of Trigger?
   1. DML Trigger (After Trigger)
   2. DDL Trigger (For Trigger) 
-  
+
+
+What are Magic Tables? (Inserted/deleted tables)
+	https://www.c-sharpcorner.com/blogs/what-is-magic-table-in-sql-server1
+	
+	1. Magic tables are nothing but inserted and deleted which are temporary objects created by the server internally 
+	to hold recently inserted values in the case of insert and to hold recently deleted values in the case of delete, 
+	to hold before updating values or after updating values in the case of update.
+
+	Let us suppose if we write a trigger on the table on insert or delete or update. So on insertion of a record into that table, 
+	the inserted table will be created automatically by the database, on deletion of record from that table; the deleted table will be created automatically by the database.
+
+	2. These two tables, inserted and deleted, are called magic tables.
+
+	3. Magic tables are used to put all the deleted and updated rows. We can retrieve the column values from the deleted rows using 
+	the keyword "deleted".
+
+	4. These are not physical tables, only internal tables. 
+	5. This Magic table is used In SQL Server 6.5, 7.0 & 2000 versions with Triggers only. 
+	6. But, In SQL Server 2005, 2008 & 2008 R2 Versions can use these Magic tables with Triggers and Non-Triggers also. 
+	
+	7. Using with Triggers: 
+
+	If you have implemented any trigger for any Tables then, Whenever you insert a record into a table, that record will be in the 
+	INSERTED Magic table.
+	Whenever you update the record in that table, that existing record will be in the DELETED Magic table and the 
+	modified new data with be in the INSERTED Magic table.
+	Whenever you delete a record in that table, that record will be in the DELETED Magic table only.
+	
+	These magic tables are used inside the Triggers for tracking the data transaction.
+
+	8. Using Non-Triggers: 
+
+	You can also use the Magic tables with Non-Trigger activities using OUTPUT Clause in SQL Server 2005, 2008 & 2008 R2 versions.
+        delete from tableName
+	OUTPUT deleted.* 
+	
+	9. We can copy records from the inserted and deleted table to a physical table. The table has to be created before. 
+	 create table updatelog
+	
+	 --Then
+	 Update table TableName
+	 set col = value
+	 output deleted.*, deleted.* into updatelog
+	 where ColName = value
+
 what are the drawbacks of trigger?
 
 
