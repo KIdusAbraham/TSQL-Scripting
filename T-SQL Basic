@@ -1,0 +1,6 @@
+--The max number of instances that can be installed in a machine is 50
+--The max number of databases in an instance 32767
+--INTERVIEW QUESTION!!!!
+    Default sort order after select is based on cluster index (if there is a cluster index) or it will be 
+    sorted based on the order the record is inserted.
+ --
